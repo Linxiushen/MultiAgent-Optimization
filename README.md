@@ -17,7 +17,7 @@
 
 ### 系统架构
 
-![系统架构图](docs/architecture.svg)
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/0583af57-464b-4266-8bab-a9eafb86acef" />
 
 *系统架构图展示了各模块之间的交互关系*
 
@@ -168,10 +168,6 @@ python demos/comprehensive_demo.py
 - [项目归档总结](project_archive_summary.md) - 完整的项目归档信息
 - [详细优化计划](detailed_optimization_plan.md) - 包含具体实施步骤的详细优化方案
 
-## 系统架构
-
-![系统架构图](docs/architecture.svg)<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/0583af57-464b-4266-8bab-a9eafb86acef" />
-
 
 ## 演示
 
@@ -200,3 +196,4 @@ python demos/comprehensive_demo.py
 ## 联系作者
 
 「林修」微信：LinXiu230624
+
