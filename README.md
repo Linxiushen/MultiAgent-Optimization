@@ -170,7 +170,8 @@ python demos/comprehensive_demo.py
 
 ## 系统架构
 
-![系统架构图](docs/architecture.svg)
+![系统架构图](docs/architecture.svg)<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/0583af57-464b-4266-8bab-a9eafb86acef" />
+
 
 ## 演示
 
@@ -193,4 +194,9 @@ python demos/comprehensive_demo.py
 6. 进一步完善增强版记忆优化器的功能
 
 ## 贡献指南
+
 欢迎提交 Issue 和 Pull Request 来帮助改进项目。
+
+## 联系作者
+
+「林修」微信：LinXiu230624
