@@ -1,0 +1,24 @@
+# 这个文件定义了仓库中不同部分的代码所有者
+# 当有人提交PR时，会自动请求相应代码所有者进行审核
+# 更多信息: https://help.github.com/articles/about-codeowners/
+
+# 默认所有者
+* @your-github-username
+
+# 核心模块
+/core/ @your-github-username
+
+# 记忆模块
+/memory/ @your-github-username
+
+# 分布式协调模块
+/distributed/ @your-github-username
+
+# 恢复管理模块
+/recovery/ @your-github-username
+
+# 配置文件
+/configs/ @your-github-username
+
+# 测试文件
+/tests/ @your-github-username

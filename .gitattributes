@@ -1,0 +1,43 @@
+# 自动检测文本文件并执行LF标准化
+* text=auto
+
+# 源代码
+*.py text diff=python
+*.json text
+*.yml text
+*.yaml text
+*.md text diff=markdown
+*.txt text
+
+# 文档
+*.pdf binary
+*.docx binary
+*.pptx binary
+
+# 图像
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg text
+
+# 排除构建输出和临时文件
+__pycache__/* binary
+*.pyc binary
+*.pyo binary
+*.pyd binary
+.Python binary
+*.so binary
+*.dylib binary
+*.dll binary
+*.egg binary
+*.egg-info/* binary
+
+# 确保脚本具有正确的行尾
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 声明语言以改进GitHub语言统计
+*.py linguist-language=Python
+*.ipynb linguist-language=Python

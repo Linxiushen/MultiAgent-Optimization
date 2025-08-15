@@ -1,0 +1,22 @@
+{
+    "failure_threshold": 3,
+    "monitor_interval": 60,
+    "recovery_strategies": {
+        "default": "restart_service",
+        "llm_service": "switch_to_backup",
+        "memory_service": "restart_service",
+        "router_service": "notify_admin",
+        "critical_service": "auto_restart_and_notify"
+    },
+    "backup_services": {
+        "llm_service": {
+            "primary": "localhost:8001",
+            "backup": "localhost:8002"
+        }
+    },
+    "admin_notifications": {
+        "email": "admin@example.com",
+        "slack_channel": "#system-alerts"
+    },
+    "auto_restart_delay": 5
+}

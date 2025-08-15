@@ -1,0 +1,12 @@
+{
+    "compression_threshold": 0.75,
+    "importance_decay_rate": 0.008,
+    "max_similar_vectors": 5,
+    "relevance_threshold": 0.45,
+    "keep_ratio": 0.75,
+    "vectorizer_max_features": 5000,
+    "optimization_interval": 3600,
+    "semantic_weight": 0.6,
+    "tfidf_weight": 0.4,
+    "semantic_threshold": 0.75
+}

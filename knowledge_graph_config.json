@@ -1,0 +1,28 @@
+{
+    "confidence_threshold": 0.7,
+    "relation_types": ["is_a", "has_property", "part_of", "related_to"],
+    "knowledge_sources": ["system", "user", "agent", "external"],
+    "default_confidence": 0.8,
+    "verification_threshold": 0.6,
+    "external_api_enabled": false,
+    "external_api_url": "",
+    "external_api_key": "",
+    "learning_enabled": true,
+    "max_related_facts": 5,
+    "basic_facts": [
+        ["地球", "is_a", "行星", 0.99, "system"],
+        ["地球", "part_of", "太阳系", 0.99, "system"],
+        ["地球", "has_property", "第三颗行星", 0.99, "system"],
+        ["太阳", "is_a", "恒星", 0.99, "system"],
+        ["太阳", "part_of", "太阳系", 0.99, "system"],
+        ["行星", "related_to", "围绕恒星运行", 0.95, "system"],
+        ["水", "has_property", "化学式H2O", 0.99, "system"],
+        ["水", "has_property", "沸点100摄氏度", 0.95, "system"],
+        ["100摄氏度", "related_to", "212华氏度", 0.99, "system"],
+        ["摄氏度", "related_to", "华氏度", 0.99, "system"],
+        ["火星", "is_a", "行星", 0.99, "system"],
+        ["火星", "part_of", "太阳系", 0.99, "system"],
+        ["火星", "has_property", "第四颗行星", 0.99, "system"],
+        ["火星", "has_property", "红色", 0.95, "system"]
+    ]
+}

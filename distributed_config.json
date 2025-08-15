@@ -1,0 +1,56 @@
+{
+    "agent_heartbeat_interval": 30,
+    "task_timeout": 300,
+    "load_balancing_strategy": "least_connections",
+    "max_retries": 3,
+    "message_queue_size": 1000,
+    "resource_lock_timeout": 60,
+    "cluster_monitoring_interval": 15,
+    "agent_capacity_threshold": 80,
+    "max_failure_history": 100,
+    "failure_notification": {
+        "enabled": true,
+        "types": ["log", "system"],
+        "min_severity": "medium"
+    },
+    "email_notification": {
+        "enabled": false,
+        "smtp_server": "smtp.example.com",
+        "smtp_port": 587,
+        "username": "",
+        "password": "",
+        "sender": "system@example.com",
+        "recipients": ["admin@example.com"]
+    },
+    "webhook_notification": {
+        "enabled": false,
+        "url": "https://example.com/webhook",
+        "headers": {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer token"
+        }
+    },
+    "failover_config": {
+        "enabled": true,
+        "priority_based_reassignment": true,
+        "preserve_task_priority": true,
+        "max_reassignment_attempts": 3,
+        "critical_agents": [],
+        "backup_agents": {},
+        "use_failover_strategy": true,
+        "failover_strategy_type": "failover",
+        "backup_strategy_count": 2,
+        "reliability_threshold": 0.8,
+        "task_priority_levels": {
+            "high": 8,
+            "medium": 5,
+            "low": 2
+        },
+        "failure_cooldown_period": 300
+    },
+    "aggregator_config": {
+        "fusion_strategy": "weighted_merge",
+        "confidence_threshold": 0.7,
+        "max_context_length": 4000
+    }
+}

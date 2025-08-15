@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+  <style>
+    .component { fill: #4a90e2; stroke: #333; stroke-width: 2px; }
+    .memory { fill: #7ed321; }
+    .router { fill: #f5a623; }
+    .coordinator { fill: #d0021b; }
+    .aggregator { fill: #bd10e0; }
+    .agent { fill: #9013fe; }
+    .label { font-family: Arial, sans-serif; font-size: 14px; fill: #333; text-anchor: middle; }
+    .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #333; text-anchor: middle; }
+    .arrow { stroke: #333; stroke-width: 2px; marker-end: url(#arrowhead); }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <text x="400" y="40" class="title">多Agent智能分流与长程记忆优化系统架构图</text>
+  
+  <!-- 核心组件 -->
+  <rect x="300" y="100" width="200" height="60" class="component router" rx="10" />
+  <text x="400" y="135" class="label">Router (路由系统)</text>
+  
+  <rect x="100" y="250" width="200" height="60" class="component memory" rx="10" />
+  <text x="200" y="285" class="label">Memory Manager (记忆管理)</text>
+  
+  <rect x="300" y="250" width="200" height="60" class="component coordinator" rx="10" />
+  <text x="400" y="285" class="label">Distributed Coordinator (分布式协调)</text>
+  
+  <rect x="500" y="250" width="200" height="60" class="component aggregator" rx="10" />
+  <text x="600" y="285" class="label">Aggregator (响应聚合)</text>
+  
+  <!-- Agent集群 -->
+  <rect x="50" y="400" width="120" height="50" class="component agent" rx="10" />
+  <text x="110" y="430" class="label">Agent 1</text>
+  
+  <rect x="200" y="400" width="120" height="50" class="component agent" rx="10" />
+  <text x="260" y="430" class="label">Agent 2</text>
+  
+  <rect x="350" y="400" width="120" height="50" class="component agent" rx="10" />
+  <text x="410" y="430" class="label">Agent 3</text>
+  
+  <rect x="500" y="400" width="120" height="50" class="component agent" rx="10" />
+  <text x="560" y="430" class="label">Agent N</text>
+  
+  <text x="680" y="430" class="label">...</text>
+  
+  <!-- 连接线 -->
+  <!-- Router到其他组件 -->
+  <line x1="400" y1="160" x2="200" y2="250" class="arrow" />
+  <line x1="400" y1="160" x2="400" y2="250" class="arrow" />
+  <line x1="400" y1="160" x2="600" y2="250" class="arrow" />
+  
+  <!-- Memory Manager到Agent -->
+  <line x1="200" y1="310" x2="110" y2="400" class="arrow" />
+  <line x1="200" y1="310" x2="260" y2="400" class="arrow" />
+  
+  <!-- Distributed Coordinator到Agent -->
+  <line x1="400" y1="310" x2="110" y2="400" class="arrow" />
+  <line x1="400" y1="310" x2="260" y2="400" class="arrow" />
+  <line x1="400" y1="310" x2="410" y2="400" class="arrow" />
+  <line x1="400" y1="310" x2="560" y2="400" class="arrow" />
+  
+  <!-- Aggregator到Agent -->
+  <line x1="600" y1="310" x2="410" y2="400" class="arrow" />
+  <line x1="600" y1="310" x2="560" y2="400" class="arrow" />
+  
+  <!-- Agent之间的连接 -->
+  <line x1="170" y1="425" x2="200" y2="425" class="arrow" />
+  <line x1="320" y1="425" x2="350" y2="425" class="arrow" />
+  <line x1="470" y1="425" x2="500" y2="425" class="arrow" />
+  
+  <!-- 图例 -->
+  <rect x="50" y="500" width="20" height="20" class="component router" rx="3" />
+  <text x="80" y="515" class="label" text-anchor="start">路由系统</text>
+  
+  <rect x="180" y="500" width="20" height="20" class="component memory" rx="3" />
+  <text x="210" y="515" class="label" text-anchor="start">记忆管理</text>
+  
+  <rect x="310" y="500" width="20" height="20" class="component coordinator" rx="3" />
+  <text x="340" y="515" class="label" text-anchor="start">分布式协调</text>
+  
+  <rect x="440" y="500" width="20" height="20" class="component aggregator" rx="3" />
+  <text x="470" y="515" class="label" text-anchor="start">响应聚合</text>
+  
+  <rect x="570" y="500" width="20" height="20" class="component agent" rx="3" />
+  <text x="600" y="515" class="label" text-anchor="start">Agent</text>
+</svg>

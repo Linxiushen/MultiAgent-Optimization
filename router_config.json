@@ -1,0 +1,107 @@
+{
+    "agent_profiles": {
+        "default_agent": {
+            "description": "通用Agent，处理一般性查询",
+            "model": "gpt-3.5-turbo",
+            "temperature": 0.7,
+            "supported_intents": ["general", "information", "conversation"]
+        },
+        "technical_agent": {
+            "description": "技术Agent，处理技术问题和代码相关任务",
+            "model": "gpt-4",
+            "temperature": 0.5,
+            "supported_intents": ["technical", "coding", "debugging", "explanation"]
+        },
+        "creative_agent": {
+            "description": "创意Agent，处理创意和文案相关任务",
+            "model": "gpt-4",
+            "temperature": 0.8,
+            "supported_intents": ["creative", "writing", "brainstorming", "design"]
+        },
+        "memory_agent": {
+            "description": "记忆Agent，专门处理与记忆相关的任务",
+            "model": "gpt-3.5-turbo",
+            "temperature": 0.3,
+            "supported_intents": ["memory", "recall", "history", "context"]
+        }
+    },
+    "routing_strategies": {
+        "direct": {
+            "description": "直接路由策略，根据查询内容直接选择Agent",
+            "enabled": true
+        },
+        "memory_enhanced": {
+            "description": "记忆增强路由策略，考虑历史对话上下文",
+            "enabled": true
+        },
+        "history_based": {
+            "description": "基于历史交互的路由策略，分析用户偏好和查询模式",
+            "enabled": true,
+            "config": {
+                "history_file": "interaction_history.json",
+                "max_history_size": 1000,
+                "preference_weight": 0.4,
+                "similarity_weight": 0.3,
+                "success_weight": 0.3,
+                "exploration_score": 0.5
+            }
+        },
+        "semantic": {
+            "description": "基于语义理解的路由策略，理解查询意图和内容",
+            "enabled": true,
+            "config": {
+                "similarity_weight": 0.6,
+                "intent_weight": 0.4,
+                "intent_patterns": {
+                    "technical": ["代码", "编程", "开发", "调试", "技术", "问题", "错误", "bug"],
+                    "creative": ["创意", "设计", "写作", "文案", "故事", "创作"],
+                    "memory": ["记住", "回忆", "之前", "历史", "上次", "记录"],
+                    "general": ["什么是", "如何", "为什么", "解释", "帮助"]
+                }
+            }
+        },
+        "adaptive": {
+            "description": "自适应路由策略，动态选择最合适的路由策略",
+            "enabled": true,
+            "config": {
+                "history_strategy_config": {
+                    "history_file": "interaction_history.json",
+                    "max_history_size": 1000
+                },
+                "semantic_strategy_config": {
+                    "similarity_weight": 0.6,
+                    "intent_weight": 0.4
+                },
+                "overall_weight": 0.3,
+                "recent_weight": 0.7,
+                "recent_window_size": 10,
+                "min_strategy_samples": 5,
+                "exploration_rate": 0.2
+            }
+        },
+        "multi_agent": {
+            "description": "多Agent协作路由策略，将查询分发给多个Agent处理",
+            "enabled": false,
+            "config": {
+                "semantic_strategy_config": {
+                    "similarity_weight": 0.6,
+                    "intent_weight": 0.4
+                }
+            }
+        }
+    },
+    "agent_strategy_mapping": {
+        "default_agent": "direct",
+        "technical_agent": "direct",
+        "creative_agent": "direct",
+        "memory_agent": "memory_enhanced"
+    },
+    "default_strategy": "semantic",
+    "routing_threshold": 0.75,
+    "fallback_agent": "default_agent",
+    "aggregator_config": {
+        "fusion_strategy": "weighted_merge",
+        "confidence_threshold": 0.7,
+        "max_context_length": 4000
+    }
+}

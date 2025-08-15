@@ -1,0 +1,19 @@
+{
+  "fusion_strategy": "weighted_merge",
+  "confidence_threshold": 0.7,
+  "max_context_length": 4000,
+  "conflict_resolution": {
+    "enabled": true,
+    "strategies": ["majority_voting", "confidence_weighted", "semantic_analysis", "source_reliability"],
+    "default_strategy": "confidence_weighted",
+    "similarity_threshold": 0.7,
+    "contradiction_threshold": 0.3,
+    "factual_weight": 0.6,
+    "opinion_weight": 0.4
+  },
+  "response_format": {
+    "include_confidence": false,
+    "include_sources": true,
+    "include_conflict_info": true
+  }
+}
