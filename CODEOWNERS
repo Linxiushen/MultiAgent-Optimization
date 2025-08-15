@@ -3,22 +3,22 @@
 # 更多信息: https://help.github.com/articles/about-codeowners/
 
 # 默认所有者
-* @your-github-username
+* @github-Linxiushen
 
 # 核心模块
-/core/ @your-github-username
+/core/ @github-Linxiushen
 
 # 记忆模块
-/memory/ @your-github-username
+/memory/ @github-Linxiushen
 
 # 分布式协调模块
-/distributed/ @your-github-username
+/distributed/ @github-Linxiushen
 
 # 恢复管理模块
-/recovery/ @your-github-username
+/recovery/ @github-Linxiushen
 
 # 配置文件
-/configs/ @your-github-username
+/configs/ @github-Linxiushen
 
 # 测试文件
-/tests/ @your-github-username
+/tests/ @github-Linxiushen
