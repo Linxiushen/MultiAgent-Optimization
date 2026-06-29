@@ -108,6 +108,7 @@ venv.bak/
 *.db
 *.sqlite3
 *.faiss
+*.faiss.ids.json
 *.pkl
 *.h5
 *.model
@@ -117,3 +118,8 @@ venv.bak/
 /outputs/
 /temp/
 /cache/
+
+# 运行时数据产物（记忆存储、交互历史等，不应纳入版本控制）
+memory/store/
+interaction_history.json
+**/temp_*.json

@@ -53,48 +53,53 @@
 ## 项目结构
 
 ```
-多Agent智能分流 + 长程记忆优化方案/
-├── configs/                 # 配置文件
-│   ├── router_config.json    # 路由系统配置
-│   ├── memory_config.json    # 记忆系统配置
-│   ├── recovery_config.json  # 故障恢复配置
-│   ├── distributed_config.json  # 分布式协调配置
-│   └── memory_optimizer_config.json  # 记忆优化器配置
-├── core/                    # 核心模块
-│   ├── __init__.py
-│   ├── router.py             # 路由核心实现
-│   └── aggregator.py         # 跨Agent信息融合核心
-├── memory/                  # 记忆系统
-│   ├── __init__.py
-│   ├── memory_manager.py     # 记忆管理核心
-│   ├── memory_item.py        # 记忆项定义
-│   ├── memory_optimizer.py   # 记忆优化器
-│   └── memory_optimizer_enhanced.py   # 增强版记忆优化器
-├── recovery/                # 故障恢复系统
-│   ├── __init__.py
-│   └── recovery_manager.py   # 故障恢复核心
-├── distributed/             # 分布式协调系统
-│   ├── __init__.py
-│   └── coordinator.py        # 分布式协调核心
-├── adapters/                # 适配器
-│   ├── __init__.py
-│   └── llm.py               # LLM适配层
-├── demos/                   # 演示脚本
-│   ├── cli_assistant.py      # 命令行助手演示
-│   └── aggregator_demo.py    # 聚合器演示
-├── tests/                   # 测试文件
-│   ├── test_router.py        # 路由系统测试
-│   ├── test_memory_manager.py  # 记忆系统测试
-│   ├── test_memory_optimizer.py  # 记忆优化器测试
-│   ├── test_distributed_coordinator.py  # 分布式协调测试
-│   ├── test_recovery_manager.py  # 故障恢复测试
-│   └── performance_test.py   # 性能测试
-├── run_tests.py             # 测试运行脚本
-├── run_tests_direct.py      # 直接测试运行脚本
-├── simple_test.py           # 简单测试脚本
-├── run_test_fix.bat         # 测试修复批处理
-├── run_test_final.py        # 最终测试运行脚本
-└── test_runner_gui.py       # 测试运行GUI程序
+MultiAgent-Optimization/
+├── main.py                          # 主程序入口
+├── requirements.txt                 # 依赖列表
+├── pytest.ini                       # pytest 配置（pythonpath 等）
+├── configs/                         # 配置文件
+│   ├── router_config.json           # 路由系统配置
+│   ├── aggregator_config.json       # 聚合器配置
+│   ├── recovery_config.json         # 故障恢复配置
+│   ├── distributed_config.json      # 分布式协调配置
+│   ├── knowledge_graph_config.json  # 知识图谱配置
+│   └── memory_optimizer_config.json # 记忆优化器配置
+├── core/                            # 核心模块
+│   ├── router.py                    # 路由核心实现
+│   ├── enhanced_router.py           # 增强版路由器
+│   ├── routing_strategies.py        # 路由策略集合
+│   ├── aggregator.py                # 跨Agent信息融合核心
+│   ├── enhanced_aggregator.py       # 增强版聚合器
+│   ├── conflict_resolver.py         # 冲突解决
+│   ├── fact_verifier.py             # 事实校验
+│   ├── knowledge_graph.py           # 知识图谱
+│   └── coordinator.py               # 协调器兼容垫片（re-export distributed.coordinator）
+├── memory/                          # 记忆系统
+│   ├── memory_manager.py            # 记忆管理核心
+│   ├── memory_optimizer.py          # 记忆优化器
+│   └── memory_optimizer_enhanced.py # 增强版记忆优化器
+├── distributed/                     # 分布式协调系统
+│   ├── coordinator.py               # 分布式协调核心
+│   ├── distributed_strategy.py      # 负载均衡策略
+│   └── failover_strategy.py         # 故障转移策略
+├── recovery/                        # 故障恢复系统
+│   └── recovery_manager.py          # 故障恢复核心
+├── adapters/                        # 适配器
+│   └── llm.py                       # LLM适配层
+├── demos/                           # 演示脚本
+│   ├── cli_assistant.py             # 命令行助手演示
+│   ├── aggregator_demo.py           # 聚合器演示
+│   ├── comprehensive_demo.py        # 综合演示
+│   ├── system_demo.py               # 系统功能演示
+│   └── ...                          # 其它专项演示脚本
+└── tests/                           # 测试文件（pytest）
+    ├── test_router.py               # 路由系统测试
+    ├── test_memory.py               # 记忆系统测试
+    ├── test_memory_optimizer.py     # 记忆优化器测试
+    ├── test_distributed_coordinator.py  # 分布式协调测试
+    ├── test_recovery_manager.py     # 故障恢复测试
+    ├── performance_test.py          # 性能测试
+    └── ...                          # 其它单元/集成测试
 ```
 
 ## 使用指南
@@ -147,7 +152,8 @@ python main.py
 
 ### 运行测试
 ```bash
-python run_tests.py
+# 在仓库根目录执行，pytest 会自动读取 pytest.ini 配置
+pytest
 ```
 
 ### 运行聚合器演示
@@ -164,9 +170,10 @@ python demos/comprehensive_demo.py
 
 为了更好地理解和使用本系统，我们提供了以下文档资源：
 
-- [技术文档](technical_documentation.md) - 详细的技术实现说明
-- [项目归档总结](project_archive_summary.md) - 完整的项目归档信息
-- [详细优化计划](detailed_optimization_plan.md) - 包含具体实施步骤的详细优化方案
+- [API 参考](API_REFERENCE.md) - 各模块的接口说明
+- [技术亮点](TECHNICAL_HIGHLIGHTS.md) - 关键技术实现说明
+- [性能基准](PERFORMANCE_BENCHMARKS.md) - 性能测试数据
+- [路线图](ROADMAP.md) - 后续规划
 
 
 ## 演示
